@@ -1,0 +1,20 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "ea0da41btrial",
+          "space": "dev",
+          "instance": "employee-management-java-cds-db",
+          "key": "employee-management-java-cds-db-key"
+        },
+        "kind": "hana",
+        "vcap": {
+          "name": "db"
+        }
+      }
+    }
+  }
+}

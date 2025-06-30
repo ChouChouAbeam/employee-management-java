@@ -1,0 +1,85 @@
+### Test Employee Service
+@baseUrl = http://localhost:8080/odata/v4/EmployeesService
+
+### Get all employees
+GET {{baseUrl}}/Employees?$expand=role,department
+Authorization: Basic viewer:
+
+### Get all roles
+GET {{baseUrl}}/Roles
+Authorization: Basic viewer:
+
+### Get all departments  
+GET {{baseUrl}}/Departments
+Authorization: Basic viewer:
+
+
+### Create new employee - Senior hired May 18, 2022
+POST {{baseUrl}}/Employees
+Content-Type: application/json
+Authorization: Basic admin:
+
+{
+  "firstName": "John",
+  "lastName": "Doe", 
+  "email": "john.doe@company.com",
+  "hireDate": "2022-05-18",
+  "role_ID": "4669922c-7ccd-4c1b-80c3-c8485c18b02f",
+  "department_ID": "6596004c-a6c3-43f1-9fdf-cd84df949f97"
+}
+
+### Create new employee - Manager hired January 1, 2020
+POST {{baseUrl}}/Employees
+Content-Type: application/json
+Authorization: Basic admin:
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@company.com", 
+  "hireDate": "2020-01-01",
+  "role_ID": "4669923f-a563-46d3-9058-c5eb9a454da6",
+  "department_ID": "65960058-17ee-4956-967a-9bd093b21f93"
+}
+
+### Create new employee - Junior hired December 1, 2024
+POST {{baseUrl}}/Employees
+Content-Type: application/json
+Authorization: Basic admin:
+
+{
+  "firstName": "Mike",
+  "lastName": "Johnson",
+  "email": "mike.johnson@company.com",
+  "hireDate": "2024-12-01", 
+  "role_ID": "46699216-39f3-4a62-ba8b-3d187bd4ea3e",
+  "department_ID": "6596004c-a6c3-43f1-9fdf-cd84df949f97"
+}
+
+### Create new employee - Senior hired June 10, 2019
+POST {{baseUrl}}/Employees
+Content-Type: application/json
+Authorization: Basic admin:
+
+{
+  "firstName": "Sarah",
+  "lastName": "Wilson",
+  "email": "sarah.wilson@company.com",
+  "hireDate": "2019-06-10", 
+  "role_ID": "4669922c-7ccd-4c1b-80c3-c8485c18b02f",
+  "department_ID": "65960058-17ee-4956-967a-9bd093b21f93"
+}
+
+### Create new employee - Manager hired March 15, 2021
+POST {{baseUrl}}/Employees
+Content-Type: application/json
+Authorization: Basic admin:
+
+{
+  "firstName": "David",
+  "lastName": "Brown",
+  "email": "david.brown@company.com",
+  "hireDate": "2021-03-15", 
+  "role_ID": "4669923f-a563-46d3-9058-c5eb9a454da6",
+  "department_ID": "6596004c-a6c3-43f1-9fdf-cd84df949f97"
+}
