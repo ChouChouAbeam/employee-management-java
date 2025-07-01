@@ -1,1 +1,1 @@
-ID,firstName,lastName,email,hireDate,salary,role_ID,department_ID
+ID,firstName,lastName,email,hireDate,dateOfBirth,gender,salary,role_ID,department_ID

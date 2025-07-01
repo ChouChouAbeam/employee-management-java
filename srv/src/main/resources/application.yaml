@@ -15,6 +15,25 @@ cds:
         - name: admin
           roles:
             - admin
+
+---
+spring:
+  config.activate.on-profile: cloud
+cds:
+  data:
+    db:
+      vcapp: true
+  security.mock.enabled: true	
+  security:
+    mock:
+      users:
+        - name: viewer
+          roles:
+            - viewer
+
+        - name: admin
+          roles:
+            - admin
             
 ---
 management:

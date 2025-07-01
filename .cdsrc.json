@@ -3,6 +3,8 @@
         "native_hana_associations": false
     },
     "requires": {
-        "db": "hana"
+        "[hybrid]": {
+            "db": "hana"
+        }
     }
 }
