@@ -17,6 +17,8 @@ entity Employees : cuid {
     lastName: String;
     email: String;
     hireDate: Date;
+    dateOfBirth: Date;
+    gender: String;
     salary: Decimal(10,2);
     role: Association to Roles;
     department: Association to Departments;

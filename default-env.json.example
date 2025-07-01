@@ -1,0 +1,20 @@
+{
+  "VCAP_SERVICES": {
+    "hana": [
+      {
+        "name": "db",
+        "label": "hana",
+        "tags": ["hana", "database", "relational"],
+        "credentials": {
+          "url": "jdbc:sap://",
+          "user": "",
+          "password": "",
+          "schema": "",
+          "driver": "com.sap.db.jdbc.Driver",
+          "host": "",
+          "port": "443"
+        }
+      }
+    ]
+  }
+}
