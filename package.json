@@ -5,7 +5,14 @@
   "license": "ISC",
   "repository": "<Add your repository here>",
   "devDependencies": {
+    "@sap/cds": "^8",
     "@sap/cds-dk": "^8",
-    "@sap/cds": "^8"
+    "mbt": "^1.2.29",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "undeploy": "cf undeploy employee-management-java --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   }
 }

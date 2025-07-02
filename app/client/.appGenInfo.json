@@ -4,7 +4,7 @@
     "generatorPlatform": "SAP Business Application Studio",
     "serviceType": "Local Cap",
     "metadataFilename": "",
-    "serviceUrl": "http://localhost:4004/odata/v4/EmployeesService/",
+    "serviceUrl": "http://localhost:8080/odata/v4/EmployeesService/",
     "appName": "client",
     "appTitle": "Employee Management Java",
     "appDescription": "An SAP Fiori application.",
