@@ -47,6 +47,19 @@ cds:
 
 ```
 
+Find credentials in database service **after binding hane database service**. Use
+```
+
+cf service-key {data-service-name} {data-service-key}
+
+```
+Output be like 
+```
+
+ {"credentials": {...}}
+
+```
+
 ### Add dependencies for `pom.xml`
 ```
 
