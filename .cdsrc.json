@@ -8,7 +8,9 @@
             "auth": "xsuaa"
         },
         "[production]": {
-            "auth": "xsuaa"
-        }
+            "auth": "xsuaa",
+            "db": "hana"
+        },
+        "db": "hana"
     }
 }

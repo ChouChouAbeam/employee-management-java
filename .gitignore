@@ -37,3 +37,9 @@ hs_err*
 
 # added by cds
 .cdsrc-private.json
+
+**/dist/
+
+**.zip
+# added by cds
+.cdsrc-private.json
