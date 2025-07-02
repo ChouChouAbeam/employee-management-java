@@ -1,0 +1,156 @@
+<mvc:View
+    controllerName="client.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <ScrollContainer
+        id="detailScrollContainer"
+        vertical="true"
+        height="100%"
+    >
+        <core:Fragment
+            fragmentName="client.view.fragment.Header"
+            type="XML"
+        />
+        <VBox class="sapUiSmallMargin">
+            <Panel
+                headerText="{i18n>detailTitle}"
+                class="sapUiResponsiveMargin"
+                width="auto"
+            >
+                <content>
+                    <VBox class="sapUiMediumMargin">
+                        <HBox>
+                            <Label text="{i18n>firstName}:" />
+                            <Text
+                                text="*"
+                                class="redStar"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                        </HBox>
+                        <Input
+                            id="firstNameInput"
+                            value="{employee>/firstName}"
+                            placeholder="{i18n>firstNameInput}"
+                            class="sapUiSmallMarginBottom"
+                            editable="{= ${userInfo>/roles/admin} === 1 }"
+                        />
+                        <HBox>
+                            <Label text="{i18n>lastName}:" />
+                            <Text
+                                text="*"
+                                class="redStar"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                        </HBox>
+                        <Input
+                            id="lastNameInput"
+                            value="{employee>/lastName}"
+                            placeholder="{i18n>lastNameInput}"
+                            class="sapUiSmallMarginBottom"
+                            editable="{= ${userInfo>/roles/admin} === 1 }"
+                        />
+                        <HBox>
+                            <Label text="{i18n>email}:" />
+                            <Text
+                                text="*"
+                                class="redStar"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                        </HBox>
+                        <Input
+                            id="emailInput"
+                            value="{employee>/email}"
+                            placeholder="{i18n>emailInput}"
+                            type="Email"
+                            class="sapUiSmallMarginBottom"
+                            valueState="{form>/validation/emailState}"
+                            valueStateText="{form>/validation/emailStateText}"
+                            change="onEmailChange"
+                            editable="{= ${userInfo>/roles/admin} === 1 }"
+                        />
+                        <HBox>
+                            <Label text="{i18n>department}:" />
+                            <Text
+                                text="*"
+                                class="redStar"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                        </HBox>
+                        <Select
+                            id="departmentSelect"
+                            selectedKey="{employee>/department_ID}"
+                            items="{select>/departments}"
+                            class="sapUiSmallMarginBottom"
+                            editable="{= ${userInfo>/roles/admin} === 1 }"
+                        >
+                            <core:Item
+                                key="{select>key}"
+                                text="{select>text}"
+                            />
+                        </Select>
+                        <HBox>
+                            <Label text="{i18n>role}:" />
+                            <Text
+                                text="*"
+                                class="redStar"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                        </HBox>
+                        <Select
+                            id="roleSelect"
+                            selectedKey="{employee>/role_ID}"
+                            items="{select>/roles}"
+                            class="sapUiSmallMarginBottom"
+                            editable="{= ${userInfo>/roles/admin} === 1 }"
+                            change="onRoleChange"
+                        >
+                            <core:Item
+                                key="{select>key}"
+                                text="{select>text}"
+                            />
+                        </Select>
+                        <Label text="{i18n>inputSalary}:" />
+                        <Input
+                            id="salaryInput"
+                            value="{employee>/salary}"
+                            type="Number"
+                            editable="false"
+                            class="sapUiSmallMarginBottom"
+                        />
+                        <HBox>
+                            <Label text="{i18n>hireDate}:" />
+                            <Text
+                                text="*"
+                                class="redStar"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                        </HBox>
+                        <DatePicker
+                            id="hireDatePicker"
+                            value="{employee>/hireDate}"
+                            class="sapUiSmallMarginBottom"
+                            editable="{= ${userInfo>/roles/admin} === 1 }"
+                            change="onHireDateChange"
+                        />
+
+                        <HBox class="sapUiMediumMarginTop">
+                            <Button
+                                text="{i18n>saveButton}"
+                                type="Emphasized"
+                                press="onSave"
+                                class="sapUiSmallMarginEnd"
+                                visible="{= ${userInfo>/roles/admin} === 1 }"
+                            />
+                            <Button
+                                text="{i18n>cancelButton}"
+                                press="onCancel"
+                            />
+                        </HBox>
+                    </VBox>
+                </content>
+            </Panel>
+        </VBox>
+    </ScrollContainer>
+</mvc:View>

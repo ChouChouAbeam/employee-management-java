@@ -34,3 +34,6 @@ hs_err*
 .cdsrc-private.json
 
 .default-env.json
+
+# added by cds
+.cdsrc-private.json

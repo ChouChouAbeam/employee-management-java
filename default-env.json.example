@@ -6,13 +6,29 @@
         "label": "hana",
         "tags": ["hana", "database", "relational"],
         "credentials": {
-          "url": "jdbc:sap://",
-          "user": "",
-          "password": "",
-          "schema": "",
-          "driver": "com.sap.db.jdbc.Driver",
-          "host": "",
-          "port": "443"
+          "url": "jdbc:sap://abc123.hana.trial-xyz.hanacloud.ondemand.com:443",
+          "user": "DBUSER",
+          "password": "secret",
+          "schema": "EMPLOYEE_MANAGEMENT",
+          "driver": "com.sap.db.jdbc.Driver"
+        }
+      }
+    ],
+     "xsuaa": [
+      {
+        "name": "xsuaa-employee",
+        "label": "xsuaa",
+        "plan": "application",
+        "credentials": {
+          "clientid": "sb-employee-management-client-id",
+          "clientsecret": "your-client-secret",
+          "url": "https://your-subdomain.authentication.sap.hana.ondemand.com",
+          "uaadomain": "authentication.sap.hana.ondemand.com",
+          "tenantmode": "dedicated",
+          "xsappname": "employee-management-app",
+          "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANB...IDAQAB\n-----END PUBLIC KEY-----",
+          "identityzone": "your-subdomain",
+          "identityzoneid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         }
       }
     ]
