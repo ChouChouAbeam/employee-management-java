@@ -21,21 +21,11 @@ spring:
   config.activate.on-profile: cloud
 cds:
   index-page.enabled: true
-  data:
-    db:
-      vcapp: true
-  security.mock.enabled: true	
-  security:
-    mock:
-      users:
-        - name: viewer
-          roles:
-            - viewer
+  
+  sql.hana.search:
+    fuzzy: true
+    fuzzinessThreshold: 0.9
 
-        - name: admin
-          roles:
-            - admin
-            
 ---
 management:
   endpoint:
@@ -54,4 +44,3 @@ management:
       enabled: true
     db:
       enabled: true
-
