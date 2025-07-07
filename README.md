@@ -15,48 +15,6 @@ mvn spring-boot:run
 
 spring:
   config.activate.on-profile: cloud
-cds:
-  data:
-    db:
-      vcapp: true
-
-```
-### Add the `default-env.json` for database information
-```
-
-{
-  "VCAP_SERVICES": {
-    "hana": [
-      {
-        "name": "db",
-        "label": "hana",
-        "tags": ["hana", "database", "relational"],
-        "credentials": {
-          "url": "jdbc:sap://",
-          "user": "",
-          "password": "",
-          "schema": "",
-          "driver": "com.sap.db.jdbc.Driver",
-          "host": "",
-          "port": "443"
-        }
-      }
-    ]
-  }
-}
-
-```
-
-Find credentials in database service **after binding hane database service**. Use
-```
-
-cf service-key {data-service-name} {data-service-key}
-
-```
-Output be like 
-```
-
- {"credentials": {...}}
 
 ```
 
@@ -87,35 +45,6 @@ spring:
   config.activate.on-profile: cloud
 
 ```
-### Add the `default-env.json` for database information
-```
-
-{
-  "VCAP_SERVICES": {
-     "xsuaa": [
-      {
-        "name": "xsuaa-employee",
-        "label": "xsuaa",
-        "plan": "application",
-        "credentials": {
-          "clientid": "sb-employee-management-client-id",
-          "clientsecret": "your-client-secret",
-          "url": "https://your-subdomain.authentication.sap.hana.ondemand.com",
-          "uaadomain": "authentication.sap.hana.ondemand.com",
-          "tenantmode": "dedicated",
-          "xsappname": "employee-management-app",
-          "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANB...IDAQAB\n-----END PUBLIC KEY-----",
-          "identityzone": "your-subdomain",
-          "identityzoneid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }
-      }
-    ]
-  }
-}
-
-```
-
-Find credentials in database service **after binding xsuaa service**. Use the same like hana database.
 
 ### Add dependencies for `pom.xml`
 ```
@@ -154,6 +83,6 @@ cds bind --exec -- npm start --prefix app/router
 ### Run project with Hybrid Mode
 ```
 
-mvn spring-boot:run -Dspring-boot.run.profiles=cloud
+SPRING_PROFILES_ACTIVE=cloud cds bind --exec -- mvn spring-boot:run
 
 ```
